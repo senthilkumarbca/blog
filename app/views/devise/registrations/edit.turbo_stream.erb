@@ -1,0 +1,5 @@
+<%= turbo_stream.append("modalBody") do %>
+<!--  <h2>Edit User</h2>-->
+  <%= render 'devise/registrations/form', resource_name: 'user', resource: current_user %>
+
+<% end %>

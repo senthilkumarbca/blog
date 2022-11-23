@@ -86,3 +86,5 @@ gem 'devise'
 gem 'cancancan', '~> 1.15'
 
 gem "bullet", "~> 7.0"
+
+gem 'cssbundling-rails', '~> 1.1', '>= 1.1.1'

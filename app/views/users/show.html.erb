@@ -1,16 +1,42 @@
-<h1 class="display-3">Profile</h1>
-<table class="profile-tab">
-  <tr class="lead">
-    <th>User Name</th>
-    <th>:</th>
-    <td><%= current_user.user_name %></td>
-  </tr>
-  <tr class="lead">
-    <th>Email Id</th>
-    <th>:</th>
-    <td><%= current_user.email %></td>
-  </tr>
-</table>
-<br>
-<%= link_to 'Edit Profile',edit_user_registration_path, class: "btn btn-info my-5" %>
+<div id="userProfile">
+  <h1 class="display-3">Profile</h1>
+  <table class="profile-tab">
+    <tr class="lead">
+      <th>User Name</th>
+      <th>:</th>
+      <td><%= current_user.user_name %></td>
+    </tr>
+    <tr class="lead">
+      <th>Email Id</th>
+      <th>:</th>
+      <td><%= current_user.email %></td>
+    </tr>
+  </table>
+  <br>
+  <%#= link_to 'Edit Profile',edit_user_registration_path, class: "btn btn-info my-5" %>
+  <%#= link_to 'Edit Profile',edit_user_registration_path, class: "btn btn-outline-info my-5", data: { controller: 'user' } %>
 
+  <!-- Button trigger modal -->
+  <a href="<%= edit_user_registration_path %>" class="btn btn-info my-5" data-bs-toggle="modal" data-bs-target="#exampleModal"  data-controller="user">Edit Profile</a>
+  <h3>Cancel my account</h3>
+
+  <p>Unhappy? <%= button_to "Cancel my account", registration_path('user'),class: "btn btn-danger", data: { confirm: "Are you sure?" }, method: :delete %></p>
+
+  <%= link_to "Back", :back,class: "btn btn-outline-info" %>
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Edit User</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" id="modalBody">
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
