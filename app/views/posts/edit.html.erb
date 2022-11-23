@@ -1,0 +1,8 @@
+<h1>Editing post</h1>
+
+<%= render "form", post: @post %>
+
+<div class="my-5">
+  <%= link_to "Show this post", topic_post_path(@topic,@post), class: "btn btn-info" %>
+  <%= link_to "Back to posts", topic_posts_path(@topic), class: "btn btn-outline-info" %>
+</div>

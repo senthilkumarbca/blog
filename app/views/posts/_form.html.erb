@@ -1,0 +1,51 @@
+
+
+<%= form_with(model: [@topic, post], local: true) do |form| %>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="mt-2">
+        <%= form.label :title, class: "form-label" %>
+        <%= form.text_field :title, class: "form-control" %>
+      </div>
+
+      <div class="mt-2">
+        <%= form.label :content, class: "form-label" %>
+        <%= form.text_area :content, class: "form-control" %>
+      </div>
+
+      <div class="mt-2">
+        <%= form.label :image, class: "form-label" %>
+        <%= form.file_field :image, class: "form-control" %>
+      </div>
+
+      <div class="mt-2">
+        <%= form.label :topic_id, class: "form-label" %>
+        <%= form.select :topic_id , Topic.all.map { |t| [t.title, t.id] },class: "form-select" %>
+      </div>
+      <%= form.label :tags, class: "form-label" %>
+      <%= form.select(:tags, options_for_select(Tag.all.collect { |t| [t.name]} , post.tags.collect { |t| t.name }),{},  { :multiple => true, :size => 5, :class => "form-select"}) %>
+      <div class="mt-2">
+        <%= form.label :tag_new, class: "form-label" %>
+        <%# form.text_field :tag_new, value: post.tags.map(&:name).join(",") %>
+        <%= form.text_field :tag_new, class: "form-control" %>
+      </div>
+      <div class="mt-2">
+        <%= form.submit class: "btn btn-primary"%>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <% if post.errors.any? %>
+        <div style="color: red">
+<!--          <h2><%#= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>-->
+            <% post.errors.each do |error| %>
+              <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <p class="lead"><%= error.full_message %></p>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
+            <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+<% end %>

@@ -1,0 +1,8 @@
+<h1>UserCommentRatings</h1>
+<%= render 'user_comment_ratings/form', user_comment_rating: @user_comment_rating %>
+<hr>
+<% @user_comment_ratings.each do |user_comment_rating| %>
+  <p><%= User.find(user_comment_rating.user_id).email %> : <%= user_comment_rating.star %></p>
+<% end %>
+<hr>
+<%= link_to "Back to post", topic_post_path(@post.topic_id,@post) %>

@@ -1,0 +1,19 @@
+<%= form_with(model: [@post, @comment, user_comment_rating]) do |f| %>
+  <div>
+    <%= f.text_field :comment_id, value: @comment.id, type: :hidden %>
+  </div>
+
+  <div>
+    <%= f.label :rating, style: "display:block"%>
+    <%= f.radio_button :star, '1' %> 1 Star
+    <%= f.radio_button :star, '2' %> 2 Star
+    <%= f.radio_button :star, '3' %> 3 Star
+    <%= f.radio_button :star, '4' %> 4 Star
+    <%= f.radio_button :star, '5' %> 5 Star
+  </div>
+
+  <div>
+    <%= f.submit 'Add a rating', class: "com" %>
+  </div>
+
+<% end %>

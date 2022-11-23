@@ -1,0 +1,11 @@
+<div id="<%= dom_id topic %>" class="mb-5">
+  <p class="lead">
+    <strong>Title:</strong> 
+    <%= topic.title.capitalize %>
+  </p>
+  <p class="lead">
+    <strong>Posts:</strong>
+    <%= (topic.posts.to_a).length %>
+  </p>
+
+</div>

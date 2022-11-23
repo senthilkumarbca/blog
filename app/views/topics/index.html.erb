@@ -1,0 +1,14 @@
+<!--<p style="color: green"><%#= notice %></p>-->
+
+<h1>Topics</h1>
+<div id="topics">
+  <ul class="topics my-5">
+  <% @topics.each do |topic| %>
+
+      <li class="list-unstyled"> <%= link_to topic.title.capitalize, topic_posts_path(topic), class: "fs-3",style: "text-decoration:none" %> | <%= link_to "Show", topic_path(topic),class: "btn btn-primary btn-sm" %></li>
+
+  <% end %>
+  </ul>
+</div>
+<%= link_to "New topic", new_topic_path , class: "btn btn-info" %>
+<%= link_to "All posts", posts_path, class: "btn btn-outline-info" %>

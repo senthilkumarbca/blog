@@ -1,0 +1,10 @@
+<!--<p style="color: green"><%#= notice %></p>-->
+
+<h1 class="display-4">Topic</h1>
+<%= render @topic %>
+
+<div>
+  <%= link_to "Edit this topic", edit_topic_path(@topic), class: "btn btn-outline-info" %> |
+  <%= link_to "Back to topics", topics_path,class: "btn btn-info" %> |
+  <%= link_to "Destroy", @topic, class: "del-btn", class: "btn btn-danger", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+</div>

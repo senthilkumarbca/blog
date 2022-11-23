@@ -1,0 +1,22 @@
+<div class="mb-3">
+  <%= form_with(model: [@post, @post.ratings.build]) do |f| %>
+    <div>
+      <%= f.text_field :user_id, value: current_user.id, type: :hidden %>
+    </div>
+
+    <div class="row">
+      <div class="col-8">
+        <%= f.radio_button :star, '1' %> (1)⭐
+        <%= f.radio_button :star, '2' %> (2)⭐
+        <%= f.radio_button :star, '3' %> (3)⭐
+        <%= f.radio_button :star, '4' %> (4)⭐
+        <%= f.radio_button :star, '5' %> (5)⭐
+      </div>
+
+      <div class="col-4">
+        <%= f.submit 'Add a rating', class: "btn btn-primary btn-sm" %>
+      </div>
+    </div>
+
+  <% end %>
+</div>

@@ -1,0 +1,4 @@
+<p><strong><%= get_username(comment.user_id) %> :</strong> <%= comment.body %> |
+  <%= link_to "del", [comment.post, comment], style: "text-decoration:none;color:red;", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } if can? :destroy, comment %>
+  <%= link_to "ratings", post_comment_user_comment_ratings_path(comment.post,comment) %>
+</p>

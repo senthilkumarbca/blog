@@ -1,0 +1,27 @@
+<div id="<%= dom_id post %>" class="post">
+  <p class="lead">
+    <strong>Title:</strong>
+    <%= post.title.titlecase %> (<%= post.topic.title.capitalize %>)
+  </p>
+
+  <p class="lead">
+    <strong>Content:</strong>
+    <%= post.content.capitalize %>
+  </p>
+
+  <p class="lead">
+    <strong>Author:</strong>
+    <%= get_username(post.user_id) %>
+  </p>
+
+
+  <p class="lead">
+    <strong>Tags:</strong>
+    <% post.tags.each do |tag| %>
+      <%= link_to tag, style: "text-decoration:none" do %>
+        #<%= tag.name.strip %>
+      <% end %>
+    <% end %>
+  </p>
+
+</div>

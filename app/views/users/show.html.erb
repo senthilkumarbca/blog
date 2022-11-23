@@ -1,0 +1,16 @@
+<h1 class="display-3">Profile</h1>
+<table class="profile-tab">
+  <tr class="lead">
+    <th>User Name</th>
+    <th>:</th>
+    <td><%= current_user.user_name %></td>
+  </tr>
+  <tr class="lead">
+    <th>Email Id</th>
+    <th>:</th>
+    <td><%= current_user.email %></td>
+  </tr>
+</table>
+<br>
+<%= link_to 'Edit Profile',edit_user_registration_path, class: "btn btn-info my-5" %>
+
