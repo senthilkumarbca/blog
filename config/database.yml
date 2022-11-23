@@ -11,6 +11,10 @@ default: &default
   username: "postgres"
   password: "123"
 
+production:
+  <<: *default
+  database: BlogS_development
+
 development:
   <<: *default
   database: BlogS_development
@@ -22,6 +26,4 @@ test:
   <<: *default
   database: BlogS_test
 
-production:
-  <<: *default
-  database: BlogS_production
+
