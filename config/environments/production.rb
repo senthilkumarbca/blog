@@ -92,19 +92,20 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   # ************* my stuf  *********************
-  host = 'https://my-blog-x56e.onrender.com' #replace with your own url
+  # host = 'https://my-blog-x56e.onrender.com' #replace with your own url
   # config.action_mailer.default_url_options = { host: host }
-  config.action_mailer.default_url_options = { :host => 'https://my-blog-x56e.onrender.com', protocol: 'http' }
+  config.action_mailer.default_url_options = { host: 'https://my-blog-x56e.onrender.com', protocol: 'http' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     address:              'smtp.gmail.com',
     port:                 587,
-    domain:               'https://my-blog-x56e.onrender.com',
     user_name:            'senthilthoondi@gmail.com',
     password:             'mqsxpvmzoejouwmw',
     authentication:       'plain',
     enable_starttls_auto: true,
     open_timeout:         5,
     read_timeout:         5 }
+
+  # domain:               'https://my-blog-x56e.onrender.com',
 
 end
