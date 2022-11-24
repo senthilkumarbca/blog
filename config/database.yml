@@ -15,7 +15,7 @@ default: &default
 production:
   <<: *default
 #  database: BlogS_production
-  url: <%= ENV['postgres://senthilkumar:M1xqF6k0QEv1ywdARAVDyy9rafMVwNJy@dpg-cdvgdjarrk09es87iqug-a/blogs_production'] %>
+  url: <%= ENV['DATABASE_URL'] %>
 
 development:
   <<: *default
