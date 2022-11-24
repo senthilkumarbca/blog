@@ -9,4 +9,4 @@
 #   Post.create(title: "post #{i+1}",content:"this is the post and it is the #{i+1}th post",topic_id:"#{rand(10..13)}")
 # end
 
-User.create!(user_name:"senthil", email:"kit.21mmc021@gmail.com", password:"123456")
+# User.create!(user_name:"senthil", email:"kit.21mmc021@gmail.com", password:"123456")
