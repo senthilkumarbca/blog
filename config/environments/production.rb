@@ -94,7 +94,7 @@ Rails.application.configure do
   # ************* my stuf  *********************
   # host = 'https://my-blog-x56e.onrender.com' #replace with your own url
   # config.action_mailer.default_url_options = { host: host }
-  config.action_mailer.default_url_options = { host: 'https://my-blog-x56e.onrender.com', protocol: 'http' }
+  config.action_mailer.default_url_options = { host: 'https://my-blog-x56e.onrender.com', protocol: 'https' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     address:              'smtp.gmail.com',
